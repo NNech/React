@@ -1,0 +1,36 @@
+.todo-container {
+    background: rgb(41, 33, 33);
+    width: 30vw;
+    margin: 10em auto;
+    border-radius: 15px;
+    padding: 20px 10px;
+    color: white;
+    border: 3px solid rgb(36, 110, 194);
+}
+.todo-header {
+    margin: 0.5em;
+    font-size: 2em;
+    text-align: center;
+}
+.listItem {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+.inputText {
+    margin: 2.5em 2em;
+    width: 80%;
+    outline: none;
+    border: none;
+    padding: 0.7em;
+}
+.inputSubmit {
+    margin-left: 25px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(37, 136, 223);
+    padding-right: 20px;
+    font-size: 16px;
+}

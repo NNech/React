@@ -1,51 +1,26 @@
 import React, { Component } from "react";
-//import Form from "./components/Form";
+import Form from "./components/Form";
 import List from "./components/List";
+import "./Todo.css";
 
 class Todo extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            value: "",
-            todoList: [],
-        };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+        this.state = { todoList: [] };
     }
 
-    handleChange(event) {
-        this.setState({ value: event.target.value });
-    }
-
-    handleClick() {
-        const task = {
-            id: String(Math.random()),
-            title: this.state.value,
-            done: false,
-        };
-        debugger;
-        this.setState({
-            value: "",
-            todoList: [...this.state.todoList, task],
-        });
+    addTodo({ id, title, done }) {
+        const { todoList } = this.state;
+        this.setState({ todoList: [...todoList, { id, title, done }] });
     }
 
     render() {
         return (
             <>
-                <div>
-                    <div>
-                        <input
-                            type="text"
-                            value={this.state.value}
-                            onChange={this.handleChange}
-                        />
-                        <button type="button" onClick={this.handleClick}>
-                            Save
-                        </button>
-                    </div>
+                <div className="todo-container">
+                    <div className="todo-header">Todo List</div>
                     <List todoList={this.state.todoList} />
+                    <Form addTodo={this.addTodo.bind(this)} />
                 </div>
             </>
         );

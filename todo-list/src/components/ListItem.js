@@ -11,8 +11,14 @@ class ListItem extends Component {
 
     render() {
         const done = this.props.todo.done ? styles.done : "";
-        return <li className={done}>{this.props.todo.title}</li>;
+        return (
+            <>
+                <div className="listItem">
+                    <input type="checkbox"></input>
+                    <div className={done}>{this.props.todo.title}</div>
+                </div>
+            </>
+        );
     }
 }
-
 export default ListItem;

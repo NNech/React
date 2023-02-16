@@ -14,19 +14,16 @@ class Form extends Component {
     }
 
     handleSubmit(event) {
-        alert("Отправленное имя: " + this.state.value);
         event.preventDefault();
-        const newTodo = [
-            ...this.todoList,
-            {
-                title: this.state.value,
-                id: String(Math.random()),
-                done: false,
-            },
-        ];
+        const { addTodo } = this.props;
 
-        this.onSubmit(newTodo);
-        this.setState("");
+        addTodo({
+            id: String(Math.random()),
+            title: this.state.value,
+            done: false,
+        });
+
+        event.target.reset();
     }
 
     render() {
@@ -34,12 +31,17 @@ class Form extends Component {
             <>
                 <form onSubmit={this.handleSubmit}>
                     <input
+                        className="inputText"
                         type="text"
                         value={this.state.value}
                         onChange={this.handleChange}
                     />
 
-                    <input type="submit" value="Save" />
+                    <input
+                        className="inputSubmit"
+                        type="submit"
+                        value="Submit"
+                    />
                 </form>
             </>
         );
