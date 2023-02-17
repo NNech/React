@@ -6,7 +6,10 @@ import "./Todo.css";
 class Todo extends Component {
     constructor(props) {
         super(props);
-        this.state = { todoList: [] };
+        this.state = {
+            value: "",
+            todoList: [],
+        };
     }
 
     addTodo({ id, title, done }) {
@@ -20,7 +23,7 @@ class Todo extends Component {
                 <div className="todo-container">
                     <div className="todo-header">Todo List</div>
                     <List todoList={this.state.todoList} />
-                    <Form addTodo={this.addTodo.bind(this)} />
+                    <Form onSubmit={this.addTodo.bind(this)} />
                 </div>
             </>
         );

@@ -7,17 +7,17 @@ class List extends Component {
         this.state = {
             todoList: [
                 {
-                    title: "Smth very important",
+                    title: "Go to the gym",
                     id: 1,
                     done: false,
                 },
                 {
-                    title: "Another very important thing",
+                    title: "Go to the pool",
                     id: 2,
                     done: false,
                 },
                 {
-                    title: "Ordinary thing",
+                    title: "Go to massage",
                     id: 3,
                     done: true,
                 },

@@ -3,7 +3,12 @@ import React, { Component } from "react";
 class Form extends Component {
     constructor(props) {
         super(props);
-        this.state = { value: "" };
+        // this.state = { value: "" };
+
+        this.state = {
+            value: "",
+            todoList: [],
+        };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,8 +27,7 @@ class Form extends Component {
             title: this.state.value,
             done: false,
         });
-
-        event.target.reset();
+        event.target.value = "";
     }
 
     render() {
@@ -33,15 +37,12 @@ class Form extends Component {
                     <input
                         className="inputText"
                         type="text"
-                        value={this.state.value}
+                        value={this.props.value}
                         onChange={this.handleChange}
+                        placeholder="Add todo"
                     />
 
-                    <input
-                        className="inputSubmit"
-                        type="submit"
-                        value="Submit"
-                    />
+                    <input className="inputSubmit" type="submit" value="+" />
                 </form>
             </>
         );

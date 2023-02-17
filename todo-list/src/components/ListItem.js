@@ -1,21 +1,25 @@
 import React, { Component } from "react";
-import styles from "../ListItem.modules.css";
+//import styles from "../ListItem.modules.css";
 
 class ListItem extends Component {
-    constructor() {
-        super();
-        this.state = {
-            done: true,
-        };
-    }
+    // constructor(props) {
+    //super(props);
+    // const { todo } = this.props;
+    //const done = this.props.todo.done ? styles.done : "";
 
     render() {
-        const done = this.props.todo.done ? styles.done : "";
         return (
             <>
-                <div className="listItem">
+                <div
+                    className="listItem"
+                    style={{
+                        textDecoration: this.props.todo.done
+                            ? "line-through"
+                            : "",
+                    }}
+                >
                     <input type="checkbox"></input>
-                    <div className={done}>{this.props.todo.title}</div>
+                    <div>{this.props.todo.title}</div>
                 </div>
             </>
         );
