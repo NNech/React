@@ -1,10 +1,21 @@
 import "./App.css";
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-class App extends Component {
-    render() {
-        return <p>hello</p>;
+export default function App() {
+    const [count, setCount] = useState(0);
+
+    function increment() {
+        setCount(count + 1);
     }
-}
+    function decrement() {
+        setCount(count - 1);
+    }
 
-export default App;
+    return (
+        <>
+            <button onClick={increment}>+1</button>
+            <span>{count}</span>
+            <button onClick={decrement}>-1</button>
+        </>
+    );
+}
