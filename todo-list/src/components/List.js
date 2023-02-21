@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import ListItem from "./ListItem";
 
 class List extends Component {
-    constructor() {
-        super();
-        this.state = {
+    /*constructor(props) {
+        super(props);
+        /* this.state = {
             todoList: [
                 {
                     title: "Go to the gym",
@@ -23,12 +23,13 @@ class List extends Component {
                 },
             ],
         };
-    }
+        
+    }*/
 
     render() {
         return (
             <div className="list">
-                {this.state.todoList.map((todo) => (
+                {this.props.todoList.map((todo) => (
                     <ListItem todo={todo} key={todo.id} />
                 ))}
             </div>

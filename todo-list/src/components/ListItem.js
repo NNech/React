@@ -20,6 +20,7 @@ class ListItem extends Component {
                 >
                     <input type="checkbox"></input>
                     <div>{this.props.todo.title}</div>
+                    <button style={{ background: "red" }}>x</button>
                 </div>
             </>
         );

@@ -4,26 +4,44 @@ import List from "./components/List";
 import "./Todo.css";
 
 class Todo extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             value: "",
-            todoList: [],
+            todoList: [
+                {
+                    title: "Go to the gym",
+                    id: 1,
+                    done: false,
+                },
+                {
+                    title: "Go to the pool",
+                    id: 2,
+                    done: false,
+                },
+                {
+                    title: "Go to massage",
+                    id: 3,
+                    done: true,
+                },
+            ],
         };
     }
 
-    addTodo({ id, title, done }) {
+    addTodo = ({ id, title, done }) => {
         const { todoList } = this.state;
-        this.setState({ todoList: [...todoList, { id, title, done }] });
-    }
+        this.setState({
+            todoList: [...todoList, { id, title, done }],
+        });
+    };
 
     render() {
         return (
             <>
                 <div className="todo-container">
-                    <div className="todo-header">Todo List</div>
+                    <div className="todo-header">My Todo List</div>
                     <List todoList={this.state.todoList} />
-                    <Form onSubmit={this.addTodo.bind(this)} />
+                    <Form addTodo={this.addTodo} />
                 </div>
             </>
         );
