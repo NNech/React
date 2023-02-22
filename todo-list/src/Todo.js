@@ -35,12 +35,23 @@ class Todo extends Component {
         });
     };
 
+    deleteTodo = (id) => {
+        this.setState({
+            todoList: this.state.todoList.filter((todo) => todo.id !== id),
+        });
+    };
+
+    completeTodo = (id) => {};
+
     render() {
         return (
             <>
                 <div className="todo-container">
                     <div className="todo-header">My Todo List</div>
-                    <List todoList={this.state.todoList} />
+                    <List
+                        todoList={this.state.todoList}
+                        deleteTodo={this.deleteTodo}
+                    />
                     <Form addTodo={this.addTodo} />
                 </div>
             </>

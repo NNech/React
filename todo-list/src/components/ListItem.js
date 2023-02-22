@@ -18,9 +18,21 @@ class ListItem extends Component {
                             : "",
                     }}
                 >
-                    <input type="checkbox"></input>
-                    <div>{this.props.todo.title}</div>
-                    <button style={{ background: "red" }}>x</button>
+                    <div>
+                        <div>{this.props.todo.title}</div>
+                    </div>
+
+                    <div>
+                        <button className="completeBtn">Complete</button>
+                        <button
+                            className="deleteBtn"
+                            onClick={() =>
+                                this.props.deleteTodo(this.props.todo.id)
+                            }
+                        >
+                            x
+                        </button>
+                    </div>
                 </div>
             </>
         );

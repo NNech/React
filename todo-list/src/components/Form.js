@@ -1,25 +1,13 @@
 import React, { Component } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 class Form extends Component {
-    /* constructor(props) {
-        super(props);
-
-        this.state = {
-            value: "",
-        };
-    }*/
-
-    /* handleChange = (event) => {
-        this.setState({ value: event.target.value });
-    };*/
-
     handleSubmit = (event) => {
         event.preventDefault();
         const { addTodo } = this.props;
 
         addTodo({
-            id: String(Math.random()),
-            // title: this.state.value,
+            id: uuidv4(),
             title: event.target.title.value,
             done: false,
         });
@@ -32,8 +20,6 @@ class Form extends Component {
                     <input
                         className="inputText"
                         type="text"
-                        // value={this.state.value}
-                        //	{/* onChange={this.handleChange}*/}
                         placeholder="Add todo"
                         name="title"
                     />
