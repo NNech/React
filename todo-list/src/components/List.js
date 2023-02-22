@@ -10,6 +10,7 @@ class List extends Component {
                         todo={todo}
                         key={todo.id}
                         deleteTodo={this.props.deleteTodo}
+                        completeTodo={this.props.completeTodo}
                     />
                 ))}
             </div>

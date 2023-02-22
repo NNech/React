@@ -5,5 +5,8 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: rgb(255, 173, 65);
+    background-image: url("./water-drops-yellow-background-stock-images_csp6750835.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

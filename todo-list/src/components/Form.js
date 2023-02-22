@@ -13,6 +13,7 @@ class Form extends Component {
         });
         event.target.reset();
     };
+
     render() {
         return (
             <>
@@ -23,7 +24,6 @@ class Form extends Component {
                         placeholder="Add todo"
                         name="title"
                     />
-
                     <input className="inputSubmit" type="submit" value="+" />
                 </form>
             </>

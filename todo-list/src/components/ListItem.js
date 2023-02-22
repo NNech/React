@@ -1,12 +1,6 @@
 import React, { Component } from "react";
-//import styles from "../ListItem.modules.css";
 
 class ListItem extends Component {
-    // constructor(props) {
-    //super(props);
-    // const { todo } = this.props;
-    //const done = this.props.todo.done ? styles.done : "";
-
     render() {
         return (
             <>
@@ -23,7 +17,14 @@ class ListItem extends Component {
                     </div>
 
                     <div>
-                        <button className="completeBtn">Complete</button>
+                        <button
+                            className="completeBtn"
+                            onClick={() =>
+                                this.props.completeTodo(this.props.todo.id)
+                            }
+                        >
+                            Complete
+                        </button>
                         <button
                             className="deleteBtn"
                             onClick={() =>

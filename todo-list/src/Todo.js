@@ -10,17 +10,17 @@ class Todo extends Component {
             value: "",
             todoList: [
                 {
-                    title: "Go to the gym",
+                    title: "Drink Warsteiner",
                     id: 1,
                     done: false,
                 },
                 {
-                    title: "Go to the pool",
+                    title: "Drink Paulaner",
                     id: 2,
                     done: false,
                 },
                 {
-                    title: "Go to massage",
+                    title: "Drink Erdinger",
                     id: 3,
                     done: true,
                 },
@@ -41,16 +41,24 @@ class Todo extends Component {
         });
     };
 
-    completeTodo = (id) => {};
+    completeTodo = (id) => {
+        const { todoList } = this.state;
+        this.setState({
+            todoList: todoList.map((todo) =>
+                todo.id === id ? { ...todo, done: !todo.done } : todo
+            ),
+        });
+    };
 
     render() {
         return (
             <>
                 <div className="todo-container">
-                    <div className="todo-header">My Todo List</div>
+                    <div className="todo-header">My beer Todo List</div>
                     <List
                         todoList={this.state.todoList}
                         deleteTodo={this.deleteTodo}
+                        completeTodo={this.completeTodo}
                     />
                     <Form addTodo={this.addTodo} />
                 </div>
